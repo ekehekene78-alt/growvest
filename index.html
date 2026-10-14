@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrowVest | Grow Your Financial Knowledge</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080d19;color:#f4f6ff;font-family:Arial,sans-serif;line-height:1.6}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #202a3d}
+.logo{font-size:25px;font-weight:bold;color:#63e6be}
+a{color:#63e6be;text-decoration:none}
+main{max-width:900px;margin:auto;padding:35px 20px}
+.hero{padding:35px 0}
+h1{font-size:42px;line-height:1.15;margin-bottom:12px}
+p{color:#bac5d9}
+section,.panel{background:#111a2b;border:1px solid #263650;border-radius:16px;padding:22px;margin:20px 0}
+button{background:#63e6be;color:#07131a;border:0;border-radius:9px;padding:12px 18px;font-weight:bold;cursor:pointer}
+input{width:100%;padding:12px;margin:8px 0 14px;background:#080d19;border:1px solid #3b4b64;border-radius:8px;color:white;font-size:16px}
+.result{font-size:25px;color:#63e6be;font-weight:bold}
+footer{text-align:center;padding:30px;color:#9eacc2}
+.small{font-size:13px;color:#9eacc2}
+</style>
+</head>
+<body>
+<header><div class="logo">GrowVest 🌱</div><a href="#lessons">Learn</a></header>
+<main>
+<div class="hero">
+<p>YOUR FUTURE STARTS WITH KNOWLEDGE</p>
+<h1>Grow your money knowledge. Build your future.</h1>
+<p>Learn the basics of saving, budgeting and investing at your own pace. Start with knowledge before risking money.</p>
+<a href="#calculator"><button>Try savings calculator</button></a>
+</div>
+<section id="calculator">
+<h2>💰 Savings Growth Calculator</h2>
+<p>See how regular savings could add up. This estimate excludes interest and fees.</p>
+<label>Starting savings (₦)</label><input id="start" type="number" min="0" value="0">
+<label>Amount saved each month (₦)</label><input id="monthly" type="number" min="0" value="5000">
+<label>Number of months</label><input id="months" type="number" min="1" max="600" value="12">
+<button onclick="calc()">Calculate</button>
+<p>Total planned savings</p><div class="result" id="result">₦60,000</div>
+<p class="small">Illustration only, not a promise of investment returns.</p>
+</section>
+<section id="lessons">
+<h2>📚 Beginner's Learning Hub</h2>
+<h3>1. Understand budgeting</h3><p>Track what comes in and what goes out. Set aside money for needs before wants.</p>
+<h3>2. Build a savings habit</h3><p>Choose a realistic amount to save regularly and keep emergency money accessible.</p>
+<h3>3. Learn before investing</h3><p>Understand risk, fees, diversification and the possibility of losing money. Verify providers with the appropriate regulator.</p>
+</section>
+<section>
+<h2>⭐ GrowVest Premium</h2>
+<p>We're planning downloadable budgeting templates and deeper learning guides.</p>
+<p><strong>Coming soon</strong> — premium resources are not available for purchase yet.</p>
+</section>
+<section>
+<h2>Our promise</h2>
+<p>GrowVest is an educational prototype. It does not accept deposits, manage investments or guarantee profits. Never send money to someone promising guaranteed returns.</p>
+</section>
+</main>
+<footer>© 2026 GrowVest · Learn wisely. Grow steadily.</footer>
+<script>
+function calc(){
+const s=Math.max(0,Number(document.getElementById('start').value)||0);
+const m=Math.max(0,Number(document.getElementById('monthly').value)||0);
+const n=Math.min(600,Math.max(1,Number(document.getElementById('months').value)||1));
+document.getElementById('result').textContent='₦'+(s+m*n).toLocaleString('en-NG',{maximumFractionDigits:2});
+}
+calc();
+</script>
+</body>
+  </html>
